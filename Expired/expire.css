@@ -1,0 +1,152 @@
+:root {
+  --primary-color: #3498db;
+  --primary-dark: #2980b9;
+  --secondary-color: #2c3e50;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: #f8f9fa;
+}
+
+.topbar {
+  background-color: #a05e24;
+  color: #E9EDC9;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  letter-spacing: 1px;
+}
+
+.navbar {
+  padding: 0.5rem 1rem;
+  background: #FEFAE0 !important;
+}
+
+.navbar .container-fluid {
+  padding: 0;
+}
+
+.navbar .text-primary {
+  color: #606C38 !important;
+}
+
+.navbar .text-warning {
+  color: #BC6C25 !important;
+}
+
+.navbar .btn {
+  background: transparent;
+  border: none;
+  transition: transform 0.2s ease;
+}
+
+.navbar .btn:hover {
+  transform: translateY(-2px);
+}
+
+.ms-auto {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn {
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.card {
+  border: none;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.content {
+  min-height: calc(100vh - 140px);
+}
+
+.table {
+  margin-bottom: 0;
+}
+
+.table th {
+  font-weight: 600;
+  border-top: none;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+/* Dark mode styles */
+.dark-mode {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+}
+
+.dark-mode .navbar {
+  background-color: #2c2c2c !important;
+}
+
+.dark-mode .card {
+  background-color: #2c2c2c !important;
+  color: #ffffff !important;
+}
+
+.dark-mode .content {
+  background-color: #1a1a1a !important;
+}
+
+.dark-mode .table {
+  color: #ffffff !important;
+}
+
+.dark-mode .table-light th {
+  background-color: #333333 !important;
+  color: #ffffff !important;
+}
+
+.dark-mode .table td {
+  border-color: #444444 !important;
+}
+
+.dark-mode tbody tr:hover {
+  background-color: #333333 !important;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.5rem;
+  }
+  
+  .display-6 {
+    font-size: 1.75rem;
+  }
+
+  .table-responsive {
+    border: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 1rem;
+  }
+}
