@@ -22,15 +22,15 @@ body {
     "navbar navbar"
     "content content";
   grid-template-columns: 1fr;
-  grid-template-rows: 60px 50px 1fr;
-  height: 100vh;
+  grid-template-rows: 45px 50px 1fr;
+  height: 90vh;
 }
 
 .topbar {
   grid-area: topbar;
   background-color: #a05e24;
   color: #E9EDC9;
-  padding: 1rem 2rem;
+  padding: 0.7rem 2rem;
   display: flex;
   align-items: center;
 }
@@ -51,7 +51,7 @@ body {
   justify-content: flex-end;
   align-items: center;
   padding: 0.5rem 1rem;
-  height: 50px;
+  min-height: 58px;
   box-sizing: border-box;
   position: relative;
   z-index: 10;
@@ -91,9 +91,9 @@ body {
 
 .content {
   grid-area: content;
-  padding: 40px;
+  padding: 20px;
   background-color: #f9f6d2;
-  min-height: calc(100vh - 140px);
+  min-height: calc(90vh - 95px);
 }
 
 .add-btn {

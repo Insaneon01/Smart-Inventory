@@ -1,183 +1,291 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-  background-color: #f9f6d2;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: #f9f6d2;
 }
 
 .container-fluid, .container {
-  background-color: #f9f6d2;
+    background-color: #f9f6d2;
 }
 
 .bg-light {
-  background-color: #f9f6d2 !important;
+    background-color: #f9f6d2 !important;
 }
 
 .navbar.bg-white {
-  background-color: #FEFAE0 !important;
+    background-color: #FEFAE0 !important;
 }
 
 .topbar {
-  background-color: #a05e24;
-  color: #E9EDC9;
-  padding: 1rem 2rem;
-  display: flex;
-  align-items: center;
+    background-color: #a05e24;
+    color: #E9EDC9;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  letter-spacing: 1px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    letter-spacing: 1px;
 }
 
 .navbar {
-  padding: 0.5rem 1rem;
-  background-color: #FEFAE0 !important;
+    padding: 0.5rem 1rem;
+    background-color: #FEFAE0 !important;
 }
 
 .navbar .container-fluid {
-  padding: 0;
-  background-color: #FEFAE0;
+    padding: 0;
+    background-color: #FEFAE0;
 }
 
 .text-primary {
-  color: #606C38 !important;
+    color: #606C38 !important;
 }
 
 .navbar .text-primary {
-  color: #606C38 !important;
+    color: #606C38 !important;
 }
 
 .navbar .text-warning {
-  color: #606C38 !important;
+    color: #606C38 !important;
 }
 
 .navbar .btn {
-  background: transparent;
-  border: none;
-  color: #606C38;
-  transition: transform 0.2s ease;
+    background: transparent;
+    border: none;
+    color: #606C38;
+    transition: transform 0.2s ease;
 }
 
 .navbar .btn:hover {
-  transform: translateY(-2px);
+    transform: translateY(-2px);
 }
 
 .ms-auto {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: nowrap;
 }
 
 .btn {
-  transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .btn:hover {
-  transform: translateY(-1px);
+    transform: translateY(-1px);
 }
 
 .btn-primary.btn-lg:hover {
-  background-color: #4d3621;
-  color: #E9EDC9;
-  transform: translateY(-1px);
+    background-color: #4d3621;
+    color: #E9EDC9;
+    transform: translateY(-1px);
 }
 
 .card {
-  border: none;
-  transition: all 0.3s ease;
-  background-color: #FEFAE0;
+    border: none;
+    transition: all 0.3s ease;
+    background-color: #FEFAE0;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+    transform: translateY(-5px);
 }
 
 .content {
-  grid-area: content;
-  padding: 40px;
-  min-height: calc(100vh - 140px);
-  background-color: #f9f6d2;
+    grid-area: content;
+    padding: 40px;
+    min-height: calc(100vh - 140px);
+    background-color: #f9f6d2;
 }
 
 .feature-item {
-  padding: 1.5rem;
-  text-align: center;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  background-color: #FEFAE0;
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background-color: #FEFAE0;
 }
 
 .feature-item:hover {
-  transform: translateY(-5px);
-  background-color: #F5F0D4;
-  box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    transform: translateY(-5px);
+    background-color: #F5F0D4;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
 }
 
 .lead {
-  font-size: 1.25rem;
-  color: #6c757d;
+    font-size: 1.25rem;
+    color: #6c757d;
 }
 
 .modal-content {
-  border-radius: 10px;
-  border: none;
+    border-radius: 15px;
+    border: none;
+    background-color: #FEFAE0;
+    box-shadow: 0 1rem 3rem rgba(160, 94, 36, 0.2);
 }
 
 .modal-header {
-  border-bottom: none;
-  padding: 1.5rem 1.5rem 0.5rem;
+    border-bottom: 2px solid #f9f6d2;
+    padding: 1.5rem 1.5rem 1rem;
+    background-color: #FEFAE0;
+    border-radius: 15px 15px 0 0;
+}
+
+.modal-title {
+    color: #606C38;
+    font-weight: bold;
+    font-size: 1.5rem;
 }
 
 .modal-body {
-  padding: 1.5rem;
+    padding: 1.5rem;
+    background-color: #FEFAE0;
+}
+
+.modal-footer {
+    border-top: 2px solid #f9f6d2;
+    padding: 1rem 1.5rem 1.5rem;
+    background-color: #FEFAE0;
+    border-radius: 0 0 15px 15px;
 }
 
 .form-control {
-  padding: 0.75rem;
-  border-radius: 8px;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    border: 2px solid #f9f6d2;
+    background-color: #f9f6d2;
+    color: #606C38;
+    font-weight: 500;
 }
 
 .form-control:focus {
-  border-color: #606C38;
-  box-shadow: 0 0 0 0.2rem rgba(96, 108, 56, 0.25);
+    border-color: #606C38;
+    box-shadow: 0 0 0 0.2rem rgba(96, 108, 56, 0.25);
+    background-color: #FEFAE0;
+}
+
+.form-control::placeholder {
+    color: #8a9456;
+    opacity: 0.8;
+}
+
+.form-label {
+    color: #606C38;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.modal .btn-primary {
+    background-color: #606C38;
+    border-color: #606C38;
+    border-radius: 10px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.modal .btn-primary:hover {
+    background-color: #4d3621;
+    border-color: #4d3621;
+    transform: translateY(-2px);
+    box-shadow: 0 0.5rem 1rem rgba(77, 54, 33, 0.3);
+}
+
+.modal .btn-primary:focus,
+.modal .btn-primary:active {
+    background-color: #4d3621;
+    border-color: #4d3621;
+    box-shadow: 0 0 0 0.2rem rgba(96, 108, 56, 0.25);
+}
+
+.modal .btn-link {
+    color: #606C38;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.modal .btn-link:hover {
+    color: #4d3621;
+    transform: translateY(-1px);
+}
+
+.btn-close {
+    background-color: #f9f6d2;
+    border-radius: 50%;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.btn-close:hover {
+    background-color: #a05e24;
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.modal-backdrop {
+    background-color: rgba(96, 108, 56, 0.4);
+}
+
+.form-check-input:checked {
+    background-color: #606C38;
+    border-color: #606C38;
+}
+
+.form-check-label {
+    color: #606C38;
+    font-weight: 500;
+}
+
+.alert-success {
+    background-color: #E9EDC9;
+    border-color: #606C38;
+    color: #4d3621;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    border-color: #a05e24;
+    color: #721c24;
 }
 
 .btn-link {
-  text-decoration: none;
-  color: #606C38;
-  font-weight: 500;
+    text-decoration: none;
+    color: #606C38;
+    font-weight: 500;
 }
 
 .btn-link:hover {
-  color: #4d3621;
+    color: #4d3621;
 }
 
 .display-4, h1 {
-  color: #606C38;
-  text-align: left;
+    color: #606C38;
+    text-align: left;
 }
 
 .btn-outline-primary {
-  background: transparent !important;
-  border: none !important;
-  color: #606C38 !important;
-  transition: transform 0.2s ease;
+    background: transparent !important;
+    border: none !important;
+    color: #606C38 !important;
+    transition: transform 0.2s ease;
 }
 
 .btn-outline-primary:hover {
-  background-color: #4d3621 !important;
-  color: #E9EDC9 !important;
-  transform: translateY(-2px);
-  border: none !important;
+    background-color: #4d3621 !important;
+    color: #E9EDC9 !important;
+    transform: translateY(-2px);
+    border: none !important;
 }
 
 .btn-outline-primary:active,
@@ -193,26 +301,32 @@ body {
     box-shadow: none !important;
 }
 
+/* Error message styling */
+.error-message {
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
 @media (max-width: 768px) {
-  .navbar {
-    padding: 0.5rem;
-  }
-  
-  .feature-item {
-    margin-bottom: 1rem;
-  }
-  
-  .display-4 {
-    font-size: 2rem;
-  }
+    .navbar {
+        padding: 0.5rem;
+    }
+    
+    .feature-item {
+        margin-bottom: 1rem;
+    }
+    
+    .display-4 {
+        font-size: 2rem;
+    }
 }
 
 @media (max-width: 576px) {
-  .container {
-    padding: 1rem;
-  }
-  
-  .feature-item {
-    padding: 1rem;
-  }
+    .container {
+        padding: 1rem;
+    }
+    
+    .feature-item {
+        padding: 1rem;
+    }
 }

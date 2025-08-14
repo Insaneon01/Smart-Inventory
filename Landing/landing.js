@@ -1,3 +1,30 @@
+// Enhanced form validation with better UI feedback
+function showError(inputId, message) {
+    const input = document.getElementById(inputId);
+    const errorDiv = input.parentNode.querySelector('.error-message');
+    
+    if (errorDiv) {
+        errorDiv.remove();
+    }
+    
+    const error = document.createElement('div');
+    error.className = 'error-message text-danger mt-1';
+    error.style.fontSize = '0.875rem';
+    error.textContent = message;
+    input.parentNode.appendChild(error);
+    input.style.borderColor = '#dc3545';
+}
+
+function clearError(inputId) {
+    const input = document.getElementById(inputId);
+    const errorDiv = input.parentNode.querySelector('.error-message');
+    
+    if (errorDiv) {
+        errorDiv.remove();
+    }
+    input.style.borderColor = '#f9f6d2';
+}
+
 // Wait for DOM content to be loaded
 document.addEventListener('DOMContentLoaded', () => {
     // Get modal elements
@@ -111,3 +138,30 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('signup-btn').click();
     });
 });
+
+// Enhanced form validation with better UI feedback
+function showError(inputId, message) {
+    const input = document.getElementById(inputId);
+    const errorDiv = input.parentNode.querySelector('.error-message');
+    
+    if (errorDiv) {
+        errorDiv.remove();
+    }
+    
+    const error = document.createElement('div');
+    error.className = 'error-message text-danger mt-1';
+    error.style.fontSize = '0.875rem';
+    error.textContent = message;
+    input.parentNode.appendChild(error);
+    input.style.borderColor = '#dc3545';
+}
+
+function clearError(inputId) {
+    const input = document.getElementById(inputId);
+    const errorDiv = input.parentNode.querySelector('.error-message');
+    
+    if (errorDiv) {
+        errorDiv.remove();
+    }
+    input.style.borderColor = '#f9f6d2';
+}
