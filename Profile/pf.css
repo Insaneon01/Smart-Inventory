@@ -12,10 +12,155 @@
 
 body {
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    background-color: #f9f6d2; /* Matching the Add Item card background */
+    background-color: #FEFAE0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    min-height: 100vh;
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+        "topbar topbar"
+        "navbar navbar"
+        "content content";
+    grid-template-columns: 1fr;
+    grid-template-rows: 45px 60px auto;
+    min-height: 100vh;
+}
+
+/* Stretched topbar to full width */
+.topbar {
+    grid-area: topbar;
+    background-color: #a05e24;
+    color: #E9EDC9;
+    padding: 0.7rem 0;
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 45px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    letter-spacing: 1px;
+    margin-left: 2rem;
+}
+
+.navbar {
+    grid-area: navbar;
+    width: 100vw;
+    background: #FEFAE0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0.75rem 0;
+    min-height: 60px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 45px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+.navbar .container-fluid {
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 2rem;
+}
+
+.ms-auto {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: nowrap;
+    margin: 0;
+}
+
+/* Consistent navbar button styles */
+.nav-btn {
+    padding: 8px 18px;
+    font-size: 1em;
+    background-color: #D4A373;
+    color: #E9EDC9;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
     position: relative;
-    margin: 0 !important;
-    padding: 0 !important;
+    overflow: hidden;
+    font-weight: 500;
+}
+
+.nav-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s;
+}
+
+.nav-btn:hover::before {
+    left: 100%;
+}
+
+/* Consistent hover styling for ALL navbar buttons */
+.nav-btn:hover {
+    background-color: #4d3621;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(77, 54, 33, 0.3);
+    color: #E9EDC9;
+}
+
+.nav-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(77, 54, 33, 0.3);
+}
+
+.content {
+    grid-area: content;
+    padding: 30px 20px;
+    background-color: #f9f6d2;
+    min-height: calc(100vh - 105px);
+    margin-top: 105px;
+    padding-bottom: 50px;
+}
+
+.display-4, h1, .display-6 {
+    color: #606C38;
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+
+/* Static profile card - no hover effects */
+.profile-card {
+    background-color: #FEFAE0;
+    border-radius: 12px;
+    box-shadow: 0 3px 6px rgba(133, 97, 61, 0.2);
+    border: 2px solid transparent;
+    position: relative;
+    margin-top: 80px;
+}
+
+.card-body {
+    padding: 2.5rem;
+    padding-top: 80px !important;
+    background: transparent;
 }
 
 .profile-avatar {
@@ -25,44 +170,49 @@ body {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background-color: var(--primary-color);
+    background-color: #606C38;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(96, 108, 56, 0.3);
     z-index: 1;
-    border: 5px solid white;
+    border: 5px solid #FEFAE0;
 }
 
 .profile-avatar i {
     font-size: 3rem;
-    color: white;
-}
-
-.card-body {
-    padding-top: 60px !important;
-}
-
-.profile-info {
-    max-width: 400px;
-    margin: 0;
+    color: #E9EDC9;
 }
 
 .form-control {
-    background-color: #f9f6d2; /* Consistent with theme */
-    border: 1px solid #E9EDC9;
+    background-color: #f9f6d2;
+    border: 2px solid #E9EDC9;
+    border-radius: 8px;
     padding: 0.75rem;
     font-size: 0.95rem;
+    color: #606C38;
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+}
+
+.form-control:focus {
+    border-color: #606C38;
+    box-shadow: 0 0 0 0.2rem rgba(96, 108, 56, 0.15);
+    background-color: #FEFAE0;
+    outline: none;
 }
 
 .form-control:read-only {
-    background-color: #f9f6d2; /* Keep consistent with theme */
+    background-color: #f9f6d2;
     cursor: default;
+    opacity: 0.8;
 }
 
 .form-label {
     font-size: 0.9rem;
     margin-bottom: 0.5rem;
+    color: #606C38;
+    font-weight: 600;
 }
 
 #change-password {
@@ -70,140 +220,22 @@ body {
     font-size: 0.85rem;
     font-weight: 500;
     color: #606C38 !important;
+    transition: all 0.3s ease;
 }
 
 #change-password:hover {
     text-decoration: underline;
-}
-
-.topbar {
-    background-color: #a05e24;
-    color: #E9EDC9;
-    padding: 1rem 2rem;
-    display: flex;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    letter-spacing: 1px;
-}
-
-.navbar {
-    padding: 0.5rem 1rem;
-    background: #FEFAE0 !important;
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-    border-bottom: none !important;
-    min-height: 58px;
-    display: flex;
-    align-items: center;
-}
-
-.navbar .container-fluid {
-    padding: 0;
-}
-
-.navbar .text-primary {
-    color: #606C38 !important;
-}
-
-.navbar .text-warning {
-    color: #BC6C25 !important;
-}
-
-.navbar .btn {
-    background: transparent;
-    border: none;
-    transition: transform 0.2s ease;
-}
-
-.navbar .btn:hover {
-    transform: translateY(-2px);
-}
-
-.ms-auto {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.btn {
-    transition: all 0.3s ease;
-}
-
-.btn:hover {
+    color: #4d3621 !important;
     transform: translateY(-1px);
 }
 
-.card {
-    border: none;
-    transition: all 0.3s ease;
-    background: #FEFAE0;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.content {
-    min-height: calc(100vh - 110px);
-    background-color: #f9f6d2;
-    padding: 2rem 0;
-    padding-top: 0 !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-}
-
-/* Container styling to remove whitespace */
-.container {
-    background-color: #f9f6d2;
-    min-height: calc(100vh - 110px);
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    max-width: 100% !important;
-}
-
-/* Row styling to eliminate side gaps */
-.row {
-    background-color: #f9f6d2;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-}
-
-.col-12 {
-    background-color: #f9f6d2;
-}
-
-/* Profile title styling with proper spacing */
-.display-6 {
-    color: #606C38 !important;
-    font-weight: bold;
-    margin-bottom: 2rem;
-    margin-top: 0 !important;
-    padding-top: 1rem !important;
-}
-
-.page-wrapper {
-    background-color: #f9f6d2;
-    min-height: 100vh;
-}
-
-/* Change Password Modal Styling */
+/* Change Password Modal Styling with About theme */
 #changePasswordModal .modal-content {
     border-radius: 15px;
     border: none;
     background-color: #FEFAE0;
-    box-shadow: 0 1rem 3rem rgba(160, 94, 36, 0.2);
+    box-shadow: 0 1rem 3rem rgba(133, 97, 61, 0.3);
+    border: 2px solid transparent;
 }
 
 #changePasswordModal .modal-header {
@@ -214,7 +246,7 @@ body {
 }
 
 #changePasswordModal .modal-title {
-    color: #606C38 !important; /* Matching Your Profile text color */
+    color: #606C38 !important;
     font-weight: bold;
     font-size: 1.5rem;
 }
@@ -234,7 +266,7 @@ body {
 #changePasswordModal .form-control {
     padding: 0.75rem 1rem;
     border-radius: 10px;
-    border: 2px solid #f9f6d2;
+    border: 2px solid #E9EDC9;
     background-color: #f9f6d2;
     color: #606C38;
     font-weight: 500;
@@ -275,16 +307,9 @@ body {
     box-shadow: 0 0.5rem 1rem rgba(77, 54, 33, 0.3);
 }
 
-#changePasswordModal .btn-primary:focus,
-#changePasswordModal .btn-primary:active {
-    background-color: #4d3621;
-    border-color: #4d3621;
-    box-shadow: 0 0 0 0.2rem rgba(96, 108, 56, 0.25);
-}
-
 #changePasswordModal .btn-secondary {
     background-color: transparent;
-    border: 2px solid #f9f6d2;
+    border: 2px solid #D4A373;
     color: #606C38;
     border-radius: 10px;
     padding: 0.75rem 1.5rem;
@@ -293,15 +318,15 @@ body {
 }
 
 #changePasswordModal .btn-secondary:hover {
-    background-color: #f9f6d2;
+    background-color: #D4A373;
     border-color: #606C38;
-    color: #606C38;
+    color: #E9EDC9;
     transform: translateY(-2px);
 }
 
 #changePasswordModal .btn-link,
 #changePasswordModal #forgotPassword {
-    color: #606C38 !important; /* Matching Your Profile text color */
+    color: #606C38 !important;
     font-weight: 600;
     text-decoration: none;
     transition: all 0.3s ease;
@@ -309,7 +334,7 @@ body {
 
 #changePasswordModal .btn-link:hover,
 #changePasswordModal #forgotPassword:hover {
-    color: #4d3621;
+    color: #4d3621 !important;
     transform: translateY(-1px);
     text-decoration: underline;
 }
@@ -324,166 +349,135 @@ body {
 }
 
 #changePasswordModal .btn-close:hover {
-    background-color: #a05e24;
+    background-color: #D4A373;
     opacity: 1;
     transform: scale(1.1);
 }
 
-#changePasswordModal.modal .modal-backdrop,
-.modal-backdrop.show {
-    background-color: rgba(96, 108, 56, 0.4);
+/* Ripple effect styles */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 600ms linear;
+    background-color: rgba(255, 255, 255, 0.6);
 }
 
-#changePasswordModal .alert-success {
-    background-color: #E9EDC9;
-    border-color: #606C38;
-    color: #4d3621;
-    border-radius: 10px;
-}
-
-#changePasswordModal .alert-danger {
-    background-color: #f8d7da;
-    border-color: #a05e24;
-    color: #721c24;
-    border-radius: 10px;
-}
-
-#changePasswordModal .error-message {
-    color: #a05e24;
-    font-size: 0.875rem;
-    font-weight: 500;
-    margin-top: 0.25rem;
-}
-
-/* Dark mode styles */
-.dark-mode {
-    background-color: #1a1a1a !important;
-    color: #ffffff !important;
-}
-
-.dark-mode .navbar {
-    background-color: #2c2c2c !important;
-}
-
-.dark-mode .card {
-    background-color: #2c2c2c !important;
-    color: #ffffff !important;
-}
-
-.dark-mode .content {
-    background-color: #1a1a1a !important;
-}
-
-.dark-mode .container {
-    background-color: #1a1a1a !important;
-}
-
-.dark-mode .row,
-.dark-mode .col-12 {
-    background-color: #1a1a1a !important;
-}
-
-.dark-mode .page-wrapper {
-    background-color: #1a1a1a !important;
-}
-
-.dark-mode .display-6,
-.dark-mode .form-label {
-    color: #ffffff !important;
-}
-
-.dark-mode .form-control {
-    background-color: #333333 !important;
-    border-color: #444444 !important;
-    color: #ffffff !important;
-}
-
-.dark-mode .form-control:read-only {
-    background-color: #2c2c2c !important;
-}
-
-.dark-mode #change-password {
-    color: #63b3ed !important;
-}
-
-.dark-mode .profile-avatar {
-    border-color: #2c2c2c !important;
-}
-
-.dark-mode .modal-content {
-    background-color: #2c2c2c !important;
-    border-color: #444444 !important;
-}
-
-/* Dark Mode for Change Password Modal */
-.dark-mode #changePasswordModal .modal-content {
-    background-color: #2c2c2c !important;
-    border-color: #444444 !important;
-}
-
-.dark-mode #changePasswordModal .modal-header,
-.dark-mode #changePasswordModal .modal-body,
-.dark-mode #changePasswordModal .modal-footer {
-    background-color: #2c2c2c !important;
-    border-color: #444444 !important;
-}
-
-.dark-mode #changePasswordModal .modal-title,
-.dark-mode #changePasswordModal .form-label {
-    color: #ffffff !important;
-}
-
-.dark-mode #changePasswordModal .form-control {
-    background-color: #333333 !important;
-    border-color: #444444 !important;
-    color: #ffffff !important;
-}
-
-.dark-mode #changePasswordModal .form-control:focus {
-    border-color: #63b3ed !important;
-    box-shadow: 0 0 0 0.2rem rgba(99, 179, 237, 0.25) !important;
-    background-color: #2c2c2c !important;
-}
-
-.dark-mode #changePasswordModal .btn-close {
-    background-color: #444444 !important;
-}
-
-.dark-mode #changePasswordModal .btn-link,
-.dark-mode #changePasswordModal #forgotPassword {
-    color: #63b3ed !important;
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
 }
 
 @media (max-width: 768px) {
     .navbar {
-        padding: 0.5rem;
+        padding: 0.75rem 0;
+        top: 45px;
     }
-    
-    .display-4 {
-        font-size: 2rem;
+
+    .navbar .container-fluid {
+        padding-right: 1rem;
     }
-    
-    body, 
-    .content,
-    .container,
-    .page-wrapper,
-    .row,
-    .col-12 {
-        background-color: #f9f6d2 !important;
+
+    .navbar .container-fluid .ms-auto {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: flex-end;
+    }
+
+    .nav-btn {
+        margin: 0 !important;
+        padding: 0.375rem 0.75rem;
+        font-size: 0.875rem;
+    }
+
+    .display-6 {
+        font-size: 1.8rem;
+    }
+
+    .logo {
+        margin-left: 1rem;
+        font-size: 1.3rem;
+    }
+
+    .content {
+        padding: 20px 15px;
+        margin-top: 110px;
+        min-height: calc(100vh - 110px);
+        padding-bottom: 40px;
+    }
+
+    .card-body {
+        padding: 2rem;
+        padding-top: 70px !important;
+    }
+
+    .profile-avatar {
+        left: 30px;
+        width: 80px;
+        height: 80px;
+    }
+
+    .profile-avatar i {
+        font-size: 2.5rem;
+    }
+
+    .profile-card {
+        margin-top: 60px;
     }
 }
 
 @media (max-width: 576px) {
-    .container {
-        padding: 1rem;
-        background-color: #f9f6d2 !important;
+    .navbar {
+        padding: 0.75rem 0;
+        top: 45px;
     }
-    
-    body,
-    .content,
-    .page-wrapper,
-    .row,
-    .col-12 {
-        background-color: #f9f6d2 !important;
+
+    .navbar .container-fluid {
+        padding-right: 0.5rem;
+    }
+
+    .nav-btn {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.875rem;
+    }
+
+    .logo {
+        margin-left: 0.5rem;
+        font-size: 1.2rem;
+    }
+
+    .content {
+        padding: 15px 12px;
+        margin-top: 115px;
+        min-height: calc(100vh - 115px);
+        padding-bottom: 30px;
+    }
+
+    .display-6 {
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .card-body {
+        padding: 1.5rem;
+        padding-top: 60px !important;
+    }
+
+    .profile-avatar {
+        left: 20px;
+        width: 70px;
+        height: 70px;
+        top: -35px;
+    }
+
+    .profile-avatar i {
+        font-size: 2rem;
+    }
+
+    .profile-card {
+        margin-top: 50px;
     }
 }

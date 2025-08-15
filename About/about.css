@@ -1,193 +1,421 @@
+:root {
+    --primary-color: #3498db;
+    --primary-dark: #2980b9;
+    --secondary-color: #2c3e50;
+}
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-  background-color: #f9f6d2;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: #FEFAE0;
+    overflow: hidden;
 }
 
 .container {
-  display: grid;
-  grid-template-areas:
-    "topbar topbar"
-    "navbar navbar"
-    "content content";
-  grid-template-columns: 1fr;
-  grid-template-rows: 60px 50px 1fr;
-  height: 100vh;
-  background-color: #f9f6d2;
+    display: grid;
+    grid-template-areas:
+        "topbar topbar"
+        "navbar navbar"
+        "content content";
+    grid-template-columns: 1fr;
+    grid-template-rows: 45px 60px 1fr;
+    height: 100vh;
+    max-height: 100vh;
 }
 
+/* Stretched topbar to full width */
 .topbar {
-  grid-area: topbar;
-  background-color: #a05e24;
-  color: #E9EDC9;
-  padding: 1rem 2rem;
-  display: flex;
-  align-items: center;
+    grid-area: topbar;
+    background-color: #a05e24;
+    color: #E9EDC9;
+    padding: 0.7rem 0;
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 45px;
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  letter-spacing: 1px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    letter-spacing: 1px;
+    margin-left: 2rem;
 }
 
 .navbar {
-  grid-area: navbar;
-  width: 100%;
-  background: #FEFAE0 !important;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 0.5rem 1rem;
-  height: 50px;
-  box-sizing: border-box;
-  position: relative;
-  z-index: 10;
+    grid-area: navbar;
+    width: 100vw;
+    background: #FEFAE0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0.75rem 0;
+    min-height: 60px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    right: 0;
+    z-index: 999;
 }
 
 .navbar .container-fluid {
-  padding: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 2rem;
 }
 
 .ms-auto {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: nowrap;
+    margin: 0;
 }
 
 .nav-right {
-  display: flex;
-  gap: 10px;
+    display: flex;
+    gap: 10px;
 }
 
+/* Consistent navbar button styles */
 .nav-btn {
-  padding: 8px 18px;
-  font-size: 1em;
-  background-color: #D4A373;
-  color: #E9EDC9;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+    padding: 8px 18px;
+    font-size: 1em;
+    background-color: #D4A373;
+    color: #E9EDC9;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    font-weight: 500;
 }
 
+.nav-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s;
+}
+
+.nav-btn:hover::before {
+    left: 100%;
+}
+
+/* Consistent hover styling for ALL navbar buttons */
 .nav-btn:hover {
-  background-color: #4d3621;
-  transform: translateY(-1px);
+    background-color: #4d3621;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(77, 54, 33, 0.3);
+    color: #E9EDC9;
+}
+
+.nav-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(77, 54, 33, 0.3);
 }
 
 .content {
-  grid-area: content;
-  padding: 40px;
-  min-height: calc(100vh - 140px);
-}
-
-.card {
-  border: none;
-  transition: all 0.3s ease;
-  background-color: #FEFAE0;
-}
-
-.card:hover {
-  transform: translateY(-5px);
+    grid-area: content;
+    padding: 15px;
+    background-color: #f9f6d2;
+    height: calc(100vh - 110px);
+    max-height: calc(100vh - 110px);
+    margin-top: 110px;
+    overflow-y: auto;
 }
 
 .display-4, h1 {
-  color: #606C38;
+    color: #606C38;
+    margin-bottom: 1rem;
+    font-size: 2.2rem;
 }
 
-.navbar .btn {
-  background: transparent;
-  border: none;
-  color: #606C38;
-  transition: transform 0.2s ease;
+.display-4 {
+    color: #606C38;
 }
 
-.navbar .btn:hover {
-  transform: translateY(-2px);
+/* About page main description */
+.about-description {
+    background-color: #FEFAE0;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 3px 6px rgba(133, 97, 61, 0.2);
+    margin-bottom: 1.25rem;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
 }
 
-.navbar .text-primary {
-  color: #606C38 !important;
+.about-description:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(133, 97, 61, 0.3);
+    border-color: #606C38;
 }
 
-.navbar .text-warning {
-  color: #BC6C25 !important;
+/* Features grid layout */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
-.navbar .btn {
-  background: transparent;
-  border: none;
-  transition: transform 0.2s ease;
+/* Individual feature cards */
+.feature-card {
+    background-color: #FEFAE0;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 3px 6px rgba(133, 97, 61, 0.2);
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    text-align: left;
 }
 
-.navbar .btn:hover {
-  transform: translateY(-2px);
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(96, 108, 56, 0.1), transparent);
+    transition: left 0.6s;
 }
 
-/* About page specific styles with matching colors */
-.feature-item {
-  padding: 1.5rem;
-  text-align: center;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  background-color: #FEFAE0;
+.feature-card:hover::before {
+    left: 100%;
 }
 
-.feature-item:hover {
-  transform: translateY(-5px);
-  background-color: #F5F0D4;
-  box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+.feature-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(133, 97, 61, 0.3);
+    border-color: #606C38;
+}
+
+.feature-card h3 {
+    color: #606C38;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.feature-card:hover h3 {
+    color: #4d3621;
+}
+
+.feature-card p {
+    color: #8a9456;
+    transition: all 0.3s ease;
+    margin: 0;
+    line-height: 1.4;
+    font-size: 0.9rem;
+}
+
+.feature-card:hover p {
+    color: #606C38;
+}
+
+.feature-card i {
+    color: #606C38;
+    transition: all 0.3s ease;
+    margin-right: 0.5rem;
+    width: 20px;
+    font-size: 1.2rem;
+}
+
+.feature-card:hover i {
+    color: #4d3621;
+    transform: scale(1.1) rotate(3deg);
 }
 
 .lead {
-  color: #606C38;
+    color: #606C38;
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 0;
+}
+
+/* Ripple effect styles */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 600ms linear;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
 }
 
 @media (max-width: 768px) {
-  .navbar .container-fluid .ms-auto {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    justify-content: center;
-  }
-  
-  .btn {
-    width: calc(50% - 0.5rem);
-    margin: 0 !important;
-  }
-  
-  .display-4 {
-    font-size: 2rem;
-  }
+    .navbar {
+        padding: 0.75rem 0;
+        top: 50px;
+    }
 
-  .ms-auto {
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    gap: 4px;
-  }
+    .navbar .container-fluid {
+        padding-right: 1rem;
+    }
 
-  .btn {
-    padding: 0.375rem 0.75rem;
-    font-size: 0.875rem;
-  }
+    .navbar .container-fluid .ms-auto {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: flex-end;
+    }
+
+    .nav-btn {
+        width: calc(50% - 0.25rem);
+        margin: 0 !important;
+        padding: 0.375rem 0.75rem;
+        font-size: 0.875rem;
+    }
+
+    .display-4 {
+        font-size: 1.8rem;
+    }
+
+    .ms-auto {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 4px;
+    }
+
+    .logo {
+        margin-left: 1rem;
+        font-size: 1.3rem;
+    }
+
+    .content {
+        padding: 12px;
+        margin-top: 115px;
+        height: calc(100vh - 115px);
+        max-height: calc(100vh - 115px);
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .feature-card {
+        padding: 0.875rem;
+    }
+
+    .about-description {
+        padding: 0.875rem;
+        margin-bottom: 1rem;
+    }
+
+    .lead {
+        font-size: 0.95rem;
+    }
+
+    .feature-card h3 {
+        font-size: 0.95rem;
+    }
+
+    .feature-card p {
+        font-size: 0.85rem;
+    }
 }
 
 @media (max-width: 576px) {
-  .navbar {
-    padding: 0.5rem;
-  }
-  
-  .btn {
-    padding: 0.25rem 0.5rem;
-    font-size: 0.875rem;
-  }
+    .navbar {
+        padding: 0.75rem 0;
+        top: 50px;
+    }
+
+    .navbar .container-fluid {
+        padding-right: 0.5rem;
+    }
+
+    .nav-btn {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.875rem;
+        width: calc(50% - 0.25rem);
+    }
+
+    .logo {
+        margin-left: 0.5rem;
+        font-size: 1.2rem;
+    }
+
+    .ms-auto {
+        gap: 2px;
+    }
+
+    .content {
+        padding: 10px;
+        margin-top: 120px;
+        height: calc(100vh - 120px);
+        max-height: calc(100vh - 120px);
+    }
+
+    .feature-card {
+        padding: 0.75rem;
+    }
+
+    .feature-card h3 {
+        font-size: 0.9rem;
+    }
+
+    .feature-card i {
+        margin-right: 0.4rem;
+        width: 18px;
+        font-size: 1.1rem;
+    }
+
+    .display-4 {
+        font-size: 1.6rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .about-description {
+        padding: 0.75rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .features-grid {
+        gap: 0.5rem;
+        margin-top: 0.75rem;
+    }
+
+    .lead {
+        font-size: 0.9rem;
+    }
+
+    .feature-card p {
+        font-size: 0.8rem;
+        line-height: 1.3;
+    }
 }

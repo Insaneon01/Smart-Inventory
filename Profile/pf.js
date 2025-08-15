@@ -28,7 +28,6 @@ document.getElementById('changePasswordForm').addEventListener('submit', functio
 
     // Here you would typically send this to a server
     console.log('Password change requested');
-    
     // Close the modal and reset form
     const modal = bootstrap.Modal.getInstance(document.getElementById('changePasswordModal'));
     modal.hide();
@@ -39,4 +38,44 @@ document.getElementById('changePasswordForm').addEventListener('submit', functio
 document.getElementById('forgotPassword').addEventListener('click', function(e) {
     e.preventDefault();
     alert('Password reset link will be sent to your email address.');
+});
+
+// Wait for DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Add ripple effect to buttons
+    function createRipple(event) {
+        const button = event.currentTarget;
+        const circle = document.createElement("span");
+        const diameter = Math.max(button.clientWidth, button.clientHeight);
+        const radius = diameter / 2;
+        
+        circle.style.width = circle.style.height = `${diameter}px`;
+        circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
+        circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
+        circle.classList.add("ripple");
+
+        const ripple = button.getElementsByClassName("ripple")[0];
+        if (ripple) {
+            ripple.remove();
+        }
+
+        button.appendChild(circle);
+    }
+
+    // Add ripple effect to navigation buttons
+    document.querySelectorAll('.nav-btn').forEach(btn => {
+        btn.addEventListener('click', createRipple);
+    });
+
+    // Add hover effects to profile card
+    const profileCard = document.querySelector('.profile-card');
+    if (profileCard) {
+        profileCard.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-3px)';
+        });
+        
+        profileCard.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    }
 });
