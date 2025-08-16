@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Welcome to IEM</title>
+  <title>Smart Inventory</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
   <link rel="stylesheet" href="./landing.css">
@@ -13,7 +13,7 @@
     <header class="topbar shadow-sm">
       <div class="logo">
         <i class="bi bi-gem fs-4 me-2"></i>
-        IEM
+        Smart Inventory
       </div>
     </header>
 
@@ -30,49 +30,39 @@
       </div>
     </nav>
 
-    <main class="content bg-light">
-      <div class="container py-4">
-        <div class="row mb-4">
-          <div class="col text-center">
-            <h1 class="display-4 fw-bold text-primary mb-4">About IEM</h1>
-            <div class="card shadow-sm">
-              <div class="card-body p-5">
-                <p class="lead mb-4">
-                  Welcome to Inventory and Expiry Management System. A smart solution to manage your inventory and track product expiry dates efficiently.
-                </p>
-                <div class="features mb-4">
-                  <div class="row g-4">
-                    <div class="col-md-4">
-                      <div class="feature-item">
-                        <i class="bi bi-list-check fs-1 text-primary mb-3"></i>
-                        <h3 class="h5 fw-bold">Track Inventory</h3>
-                        <p>Manage your inventory with ease and accuracy</p>
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="feature-item">
-                        <i class="bi bi-clock-history fs-1 text-warning mb-3"></i>
-                        <h3 class="h5 fw-bold">Expiry Alerts</h3>
-                        <p>Never miss product expiration dates</p>
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="feature-item">
-                        <i class="bi bi-graph-up fs-1 text-success mb-3"></i>
-                        <h3 class="h5 fw-bold">Analytics</h3>
-                        <p>Get insights about your inventory</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>                <button class="btn btn-outline-primary btn-sm fw-bold" id="get-started-btn">
-                  <i class="bi bi-arrow-right-circle"></i><span class="ms-1">Get Started</span>
-                </button>
-              </div>
+    <!-- Main Content -->
+    <div class="content">
+        <h1 class="display-4">About Smart Inventory</h1>
+        <p class="about-description">
+            Smart Inventory is a comprehensive inventory management system designed to help you track your items and their expiration dates efficiently.
+        </p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="card-content">
+                    <span class="card-title">Inventory Tracking</span>
+                    <span class="card-text">Keep track of all your items with detailed information including names, quantities, categories, and expiration dates.</span>
+                </div>
             </div>
-          </div>
+            <div class="feature-card highlight-card">
+                <div class="card-content">
+                    <span class="card-title">Expiration Alerts</span>
+                    <span class="card-text">Get notified when items are approaching their expiration dates to minimize waste and ensure freshness.</span>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="card-content">
+                    <span class="card-title">Smart Scanning</span>
+                    <span class="card-text">Use camera scanning technology to quickly add items to your inventory with minimal manual input.</span>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="card-content">
+                    <span class="card-title">Analytics &amp; Insights</span>
+                    <span class="card-text">View detailed analytics about your inventory patterns and optimize your stock management.</span>
+                </div>
+            </div>
         </div>
-      </div>
-    </main>
+    </div>
   </div>
 
   <!-- Sign Up Modal -->
