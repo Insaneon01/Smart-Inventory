@@ -39,7 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add click handlers for buttons
     const signupBtn = document.getElementById('signup-btn');
     const signinBtn = document.getElementById('signin-btn');
-    const getStartedBtn = document.getElementById('get-started-btn');
     
     if (signupBtn) {
         signupBtn.addEventListener('click', () => {
@@ -50,16 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (signinBtn) {
         signinBtn.addEventListener('click', () => {
             signinModal.show();
-        });
-    }
-
-    if (getStartedBtn) {
-        getStartedBtn.addEventListener('click', () => {
-            if (signupBtn) {
-                signupBtn.click();
-            } else {
-                signupModal.show();
-            }
         });
     }
 

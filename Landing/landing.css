@@ -67,6 +67,8 @@ body {
   left: 0;
   right: 0;
   z-index: 999;
+  box-shadow: 0 3px 6px rgba(133, 97, 61, 0.18);
+  border: none;
 }
 
 .navbar .container-fluid {
@@ -100,25 +102,13 @@ body {
   font-weight: 500;
 }
 
-.nav-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-  transition: left 0.5s;
-}
-.nav-btn:hover::before {
-  left: 100%;
-}
 .nav-btn:hover {
   background-color: #4d3621;
   transform: translateY(-3px);
   box-shadow: 0 8px 16px rgba(77, 54, 33, 0.3);
   color: #E9EDC9;
 }
+
 .nav-btn:active {
   transform: translateY(-1px);
   box-shadow: 0 4px 8px rgba(77, 54, 33, 0.3);
@@ -140,7 +130,9 @@ body {
   margin-bottom: 1rem;
   font-size: 2.2rem;
   font-weight: bold;
+  text-align: left;
 }
+
 .display-4 {
   color: #606C38;
 }
@@ -158,6 +150,7 @@ body {
   text-align: center;
   transition: all 0.3s ease;
 }
+
 .about-description:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(133, 97, 61, 0.3);
@@ -191,11 +184,14 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+
 .feature-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 12px rgba(133, 97, 61, 0.3);
   border-color: #606C38;
 }
+
 .card-content {
   display: flex;
   flex-direction: column;
@@ -203,6 +199,7 @@ body {
   justify-content: center;
   width: 100%;
 }
+
 .card-title {
   color: #606C38;
   font-size: 1.15rem;
@@ -210,6 +207,7 @@ body {
   margin-bottom: 0.65rem;
   display: block;
 }
+
 .card-text {
   color: #8a9456;
   font-size: 1rem;
@@ -217,6 +215,7 @@ body {
   text-align: center;
   display: block;
 }
+
 .lead {
   color: #606C38;
   font-size: 1rem;
@@ -224,7 +223,8 @@ body {
   margin-bottom: 0;
 }
 
-/* Ripple effect styles REMOVED - keep if navbar needs! */
+
+
 /* Error message styling */
 .error-message {
   font-size: 0.875rem;

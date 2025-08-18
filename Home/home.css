@@ -105,20 +105,6 @@ body {
     font-weight: 500;
 }
 
-.nav-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-    transition: left 0.5s;
-}
-
-.nav-btn:hover::before {
-    left: 100%;
-}
 
 /* Consistent hover styling for ALL navbar buttons */
 .nav-btn:hover {
@@ -159,20 +145,7 @@ body {
     letter-spacing: 0.5px;
 }
 
-.add-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-    transition: left 0.6s;
-}
 
-.add-btn:hover::before {
-    left: 100%;
-}
 
 .add-btn:hover {
     background: linear-gradient(135deg, #583e27, #4a321f);
@@ -186,13 +159,7 @@ body {
     box-shadow: 0 6px 12px rgba(88, 62, 39, 0.4);
 }
 
-.add-btn i {
-    transition: transform 0.3s ease;
-}
 
-.add-btn:hover i {
-    transform: rotate(180deg);
-}
 
 .card {
     border: none;

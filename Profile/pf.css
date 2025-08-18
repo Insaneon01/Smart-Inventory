@@ -103,21 +103,6 @@ body {
     font-weight: 500;
 }
 
-.nav-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-    transition: left 0.5s;
-}
-
-.nav-btn:hover::before {
-    left: 100%;
-}
-
 /* Consistent hover styling for ALL navbar buttons */
 .nav-btn:hover {
     background-color: #4d3621;
@@ -355,20 +340,20 @@ body {
 }
 
 /* Ripple effect styles */
-.ripple {
+/* .ripple {
     position: absolute;
     border-radius: 50%;
     transform: scale(0);
     animation: ripple 600ms linear;
     background-color: rgba(255, 255, 255, 0.6);
-}
+} */
 
-@keyframes ripple {
+/* @keyframes ripple {
     to {
         transform: scale(4);
         opacity: 0;
     }
-}
+} */
 
 @media (max-width: 768px) {
     .navbar {
