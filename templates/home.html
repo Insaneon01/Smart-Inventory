@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Smart Inventory</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+</head>
+<body>
+    <div class="container">
+        <div class="topbar">
+            <div class="logo">Smart Inventory</div>
+        </div>
+        
+        <nav class="navbar">
+            <div class="container-fluid">
+                <div class="ms-auto">
+                    <button id="about-btn" class="nav-btn">About</button>
+                    <button id="expired-btn" class="nav-btn">Expired Items</button>
+                    <button id="profile-btn" class="nav-btn">Profile</button>
+                    <button id="logout-btn" class="nav-btn">Logout</button>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="display-4 mb-4">Welcome to Your Smart Inventory</h1>
+                        <p class="lead mb-4">Keep track of your inventory items and their expiration dates efficiently.</p>
+                        <button class="add-btn">
+                            <i class="fas fa-plus me-2"></i>Add Item
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Item Modal -->
+    <div class="modal fade" id="addItemModal" tabindex="-1" aria-labelledby="addItemModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addItemModalLabel">Add New Item</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <p class="lead mb-4">Choose how you'd like to add your item:</p>
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <div class="add-option-card" id="manual-option">
+                                <div class="option-icon mb-3">
+                                    <i class="fas fa-keyboard fa-3x"></i>
+                                </div>
+                                <h5>Manual Entry</h5>
+                                <p class="text-muted">Type in your item details manually</p>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="add-option-card" id="camera-option">
+                                <div class="option-icon mb-3">
+                                    <i class="fas fa-camera fa-3x"></i>
+                                </div>
+                                <h5>Scan with Camera</h5>
+                                <p class="text-muted">Use your camera to scan item details</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-link" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
+</body>
+</html>
