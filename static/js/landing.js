@@ -130,16 +130,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Try different redirect methods
                     if (typeof window !== 'undefined') {
                         // Method 1: Standard href
-                        window.location.href = '../Home/home.html';
+                        window.location.href = '/home';
                         
                         // Fallback method 2: replace (in case href fails)
                         setTimeout(() => {
-                            window.location.replace('../Home/home.html');
+                            window.location.replace('/home');
                         }, 100);
                         
                         // Fallback method 3: assign (last resort)
                         setTimeout(() => {
-                            window.location.assign('../Home/home.html');
+                            window.location.assign('/home');
                         }, 200);
                     }
                 } catch (error) {
@@ -190,16 +190,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Try different redirect methods
                     if (typeof window !== 'undefined') {
                         // Method 1: Standard href
-                        window.location.href = '../Home/home.html';
+                        window.location.href = '/home';
                         
                         // Fallback method 2: replace (in case href fails)
                         setTimeout(() => {
-                            window.location.replace('../Home/home.html');
+                            window.location.replace('/home');
                         }, 100);
                         
                         // Fallback method 3: assign (last resort)
                         setTimeout(() => {
-                            window.location.assign('../Home/home.html');
+                            window.location.assign('/home');
                         }, 200);
                     }
                 } catch (error) {

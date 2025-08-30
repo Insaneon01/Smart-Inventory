@@ -11,5 +11,5 @@ initializeTheme();
 
 // Home button functionality
 document.getElementById('home-btn').addEventListener('click', function() {
-    window.location.href = '../Home/home.html';
+    window.location.href = '/home';
 });

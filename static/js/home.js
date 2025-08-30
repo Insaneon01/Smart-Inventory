@@ -1,18 +1,18 @@
 // Add event listeners for the nav buttons
 document.getElementById('about-btn').addEventListener('click', function() {
-    window.location.href = '../About/about.html';
+    window.location.href = '/about';
 });
 
 document.getElementById('expired-btn').addEventListener('click', function() {
-    window.location.href = '../Expired/expire.html';
+    window.location.href = '/expire';
 });
 
 document.getElementById('logout-btn').addEventListener('click', function() {
-    window.location.href = '../Landing/landing.html';
+    window.location.href = '/';
 });
 
 document.getElementById('profile-btn').addEventListener('click', function() {
-    window.location.href = '../Profile/pf.html';
+    window.location.href = '/profile';
 });
 
 // Wait for DOM to be fully loaded
