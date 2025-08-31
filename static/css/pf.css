@@ -1,135 +1,140 @@
 :root {
-    --primary-color: #3498db;
-    --primary-dark: #2980b9;
-    --secondary-color: #2c3e50;
+--primary-color: #3498db;
+--primary-dark: #2980b9;
+--secondary-color: #2c3e50;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
 }
 
 body {
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    background-color: #FEFAE0;
-    overflow-x: hidden;
-    overflow-y: auto;
-    min-height: 100vh;
+font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+background-color: #FEFAE0;
+overflow: hidden;
 }
 
 .container {
-    display: grid;
-    grid-template-areas:
-        "topbar topbar"
-        "navbar navbar"
-        "content content";
-    grid-template-columns: 1fr;
-    grid-template-rows: 45px 60px auto;
-    min-height: 100vh;
+display: grid;
+grid-template-areas:
+"topbar topbar"
+"navbar navbar"
+"content content";
+grid-template-columns: 1fr;
+grid-template-rows: 45px 60px 1fr;
+height: 100vh;
+max-height: 100vh;
 }
 
-/* Stretched topbar to full width */
+/* Topbar styling */
 .topbar {
-    grid-area: topbar;
-    background-color: #a05e24;
-    color: #E9EDC9;
-    padding: 0.7rem 0;
-    display: flex;
-    align-items: center;
-    width: 100vw;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    height: 45px;
+grid-area: topbar;
+background-color: #a05e24;
+color: #E9EDC9;
+padding: 0.7rem 0;
+display: flex;
+align-items: center;
+width: 100vw;
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+z-index: 1000;
+height: 45px;
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    letter-spacing: 1px;
-    margin-left: 2rem;
+font-size: 1.5rem;
+font-weight: bold;
+display: flex;
+align-items: center;
+letter-spacing: 1px;
+margin-left: 2rem;
 }
 
+/* Navbar styling - Updated to match landing page */
 .navbar {
-    grid-area: navbar;
-    width: 100vw;
-    background: #FEFAE0;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 0.75rem 0;
-    min-height: 60px;
-    box-sizing: border-box;
-    position: fixed;
-    top: 45px;
-    left: 0;
-    right: 0;
-    z-index: 999;
+grid-area: navbar;
+width: 100vw;
+background: #FEFAE0 !important;
+display: flex;
+justify-content: flex-end;
+align-items: center;
+padding: 0.75rem 0;
+min-height: 60px;
+box-sizing: border-box;
+position: fixed;
+top: 50px;
+left: 0;
+right: 0;
+z-index: 999;
+box-shadow: 0 3px 6px rgba(133, 97, 61, 0.18);
+border: none;
 }
 
 .navbar .container-fluid {
-    padding: 0;
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 2rem;
+padding: 0;
+width: 100%;
+display: flex;
+justify-content: flex-end;
+padding-right: 2rem;
 }
-
 .ms-auto {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: nowrap;
-    margin: 0;
+display: flex;
+align-items: center;
+gap: 12px;
+flex-wrap: nowrap;
+margin: 0;
 }
-
-/* Consistent navbar button styles */
+/* Navbar button styling */
 .nav-btn {
-    padding: 8px 18px;
-    font-size: 1em;
-    background-color: #D4A373;
-    color: #E9EDC9;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    font-weight: 500;
+padding: 8px 18px;
+font-size: 1em;
+background-color: #D4A373;
+color: #E9EDC9;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: all 0.3s ease;
+position: relative;
+overflow: hidden;
+font-weight: 500;
 }
-
-/* Consistent hover styling for ALL navbar buttons */
 .nav-btn:hover {
-    background-color: #4d3621;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 16px rgba(77, 54, 33, 0.3);
-    color: #E9EDC9;
+background-color: #4d3621;
+transform: translateY(-3px);
+box-shadow: 0 8px 16px rgba(77, 54, 33, 0.3);
+color: #E9EDC9;
 }
 
 .nav-btn:active {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(77, 54, 33, 0.3);
+transform: translateY(-1px);
+box-shadow: 0 4px 8px rgba(77, 54, 33, 0.3);
 }
+
 
 .content {
-    grid-area: content;
-    padding: 30px 20px;
-    background-color: #f9f6d2;
-    min-height: calc(100vh - 105px);
-    margin-top: 105px;
-    padding-bottom: 50px;
+grid-area: content;
+padding: 15px;
+background-color: #f9f6d2;
+height: calc(100vh - 110px);
+max-height: calc(100vh - 110px);
+margin-top: 110px;
+overflow-y: auto;
 }
 
-.display-4, h1, .display-6 {
-    color: #606C38;
-    margin-bottom: 2rem;
-    font-size: 2.2rem;
-    font-weight: bold;
+.display-4, h1 {
+color: #606C38;
+margin-bottom: 1rem;
+font-size: 2.2rem;
+font-weight: bold;
+text-align: left;
+}
+
+.display-4 {
+color: #606C38;
 }
 
 /* Static profile card - no hover effects */
