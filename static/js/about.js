@@ -14,19 +14,6 @@ document.getElementById('home-btn').addEventListener('click', function() {
     window.location.href = '/home';
 });
 
-// Add event listeners for the nav buttons
-document.getElementById('expired-btn').addEventListener('click', function() {
-    window.location.href = '/expire';
-});
-
-document.getElementById('logout-btn').addEventListener('click', function() {
-    window.location.href = '/';
-});
-
-document.getElementById('profile-btn').addEventListener('click', function() {
-    window.location.href = '/profile';
-});
-
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     // Add ripple effect to buttons
