@@ -19,11 +19,20 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container-fluid">
-            <div class="ms-auto">
-                <button id="about-btn" class="nav-btn">About</button>
-                <button id="expired-btn" class="nav-btn">Expired Items</button>
-                <button id="profile-btn" class="nav-btn">Profile</button>
-                <button id="logout-btn" class="nav-btn">Logout</button>
+            <div class="ms-auto d-flex align-items-center">
+                <button id="add-btn" class="nav-btn">Add Item</button>
+                <button id="about-btn" class="nav-btn ms-2">About</button>
+                <!-- Three-dot dropdown placed after About button -->
+                <div class="dropdown ms-2">
+                    <button class="nav-btn" id="moreDropdown" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true" title="More">
+                        <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="moreDropdown">
+                        <li><button id="expired-btn" class="dropdown-item">Expired Items</button></li>
+                        <li><button id="profile-btn" class="dropdown-item">Profile</button></li>
+                        <li><button id="logout-btn" class="dropdown-item">Logout</button></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>
@@ -34,47 +43,6 @@
                 <div class="col-md-12">
                     <h1 class="display-4 mb-4">Welcome to Your Smart Inventory</h1>
                     <p class="lead mb-4">Keep track of your inventory items and their expiration dates efficiently.</p>
-                    <button class="add-btn">
-                        <i class="fas fa-plus me-2"></i>Add Item
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Add Item Modal -->
-    <div class="modal fade" id="addItemModal" tabindex="-1" aria-labelledby="addItemModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="addItemModalLabel">Add New Item</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body text-center">
-                    <p class="lead mb-4">Choose how you'd like to add your item:</p>
-                    <div class="row g-3">
-                        <div class="col-12">
-                            <div class="add-option-card" id="manual-option">
-                                <div class="option-icon mb-3">
-                                    <i class="fas fa-keyboard fa-3x"></i>
-                                </div>
-                                <h5>Manual Entry</h5>
-                                <p class="text-muted">Type in your item details manually</p>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="add-option-card" id="camera-option">
-                                <div class="option-icon mb-3">
-                                    <i class="fas fa-camera fa-3x"></i>
-                                </div>
-                                <h5>Scan with Camera</h5>
-                                <p class="text-muted">Use your camera to scan item details</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer justify-content-center">
-                    <button type="button" class="btn btn-link" data-bs-dismiss="modal">Cancel</button>
                 </div>
             </div>
         </div>

@@ -15,11 +15,12 @@ db = SQLAlchemy(app)
 
 #models for database
 class Item(db.Model):
-    id=db.Column(db.Integer(),primary_key=True)
-    name=db.Column(db.String(lenght=30), nullable=False, unique=True)
-    price=db.Column(db.Integer(), nullable=False)
-    barcode=db.Column(db.String(lenght=12), nullable=False, unique=True)
-    desc=db.Column(db.String(lenght=1024), nullable=False, unique=True)
+    Sno=db.Column(db.Integer(),primary_key=True)
+    Name=db.Column(db.String(length=40), nullable=False,unique=False)
+    Category=db.Column(db.String(length=30), nullable=True,unique=False)
+    MfgDt=db.Column(db.String(length=12), nullable=True,unique=False)
+    ExpDt=db.Column(db.String(length=1024), nullable=False,unique=False)
+    Qty=db.Column(db.String(length=10),nullable=True,unique=False)
 
 
 
@@ -27,6 +28,8 @@ class Item(db.Model):
 
 
 
+
+#routes
 @app.route('/')
 def landing():
     return render_template('landing.html')
@@ -49,5 +52,8 @@ def expire():
 
 
 
+
+
+#execution of app
 if __name__=="__main__":
     app.run(debug=True,host="0.0.0.0",port=5000)
